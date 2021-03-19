@@ -1,5 +1,26 @@
 const { getEmployerRole } = require("../src");
 
 describe("getEmployerRole", () => {
-  test("returns the employee's role in the company", () => {});
+  it("returns the employee's position in the company", () => {
+
+    const manUtd= [{
+      name: 'Henderson',
+      position: 'Goalkeeper'
+    }, {
+      name: 'Shaw',
+      position: 'Defender'
+    }, {
+      name: 'Fernandes',
+      position: 'Midfield'
+    }, {
+      name: 'Rashford',
+      position: 'Forward' 
+    }
+  ]
+  
+    expect(getEmployerRole('Henderson', manUtd)).toEqual('Goalkeeper');
+    expect(getEmployerRole('Shaw', manUtd)).toEqual('Defender');
+    expect(getEmployerRole('Fernandes', manUtd)).toEqual('Midfield');
+    expect(getEmployerRole('Rashford', manUtd)).toEqual('Forward');
+  });
 });
